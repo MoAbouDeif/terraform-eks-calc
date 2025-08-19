@@ -10,7 +10,7 @@ variable "cluster_name" {
 
 variable "cluster_version" {
   type    = string
-  default = "1.32"
+  default = "1.33"
 }
 
 variable "compute_config" {
@@ -42,7 +42,7 @@ variable "private_subnets" {
 variable "tags" {
   type = map(string)
   default = {
-    Terraform   = "true"
+    Terraform = "true"
   }
 }
 
