@@ -59,7 +59,7 @@ variable "eks_managed_node_groups" {
   default = {
     "calculator_app" = {
       ami_type       = "AL2023_x86_64_STANDARD"
-      instance_types = ["t2.micro"]
+      instance_types = ["t3.micro","t3.large","m5.xlarge"]
 
       min_size     = 1
       max_size     = 10

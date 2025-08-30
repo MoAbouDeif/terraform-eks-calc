@@ -16,17 +16,11 @@ module "eks" {
     }
   }
 
-  # Optional
   endpoint_public_access = true
-
-  # Optional: Adds the current caller identity as an administrator via cluster access entry
   enable_cluster_creator_admin_permissions = true
-
-  compute_config = {
-    enabled    = var.compute_config.enabled
-    node_pools = var.compute_config.node_pools
-  }
-
+  enable_irsa                              = true
+  authentication_mode                      = "API_AND_CONFIG_MAP"
+  
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
 
